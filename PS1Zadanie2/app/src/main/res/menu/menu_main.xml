@@ -36,6 +36,9 @@
 
             <item android:id="@+id/Zadanie2"
                 android:title="Zadanie2"/>
+
+            <item android:id="@+id/Zadanie3"
+                android:title="Zadanie3"/>
         </menu>
 
     </item>

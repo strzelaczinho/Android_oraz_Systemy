@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private CameraManager mCameraManager;
     private String mCameraId;
     private boolean status= true;
+    String s;
   //  private ToggleButton toggleButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +69,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 String wpisanaWiadomosc = pobierzTeskt.getText().toString();
                 wpisanaWiadomosc.toUpperCase().indexOf(1);
                 adapter.add(wpisanaWiadomosc);
+                s = wpisanaWiadomosc;
                 pobierzTeskt.setText("");
                 FileHelper.writeData(items, this);
                 Toast.makeText(this, "Dodano Item o numerze id = "+adapter.getCount(), Toast.LENGTH_SHORT).show();
@@ -149,6 +151,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 tv.setTextColor(Color.GRAY);
                 // pokaz na koniec
                 snackbar.show();
+                break;
+            case R.id.Zadanie3:
+                adapter.remove(s);
+                adapter.notifyDataSetChanged();
                 break;
             case R.id.action_settings2:
                 vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
